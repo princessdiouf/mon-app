@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = 'princessdiouf/mon-app:kitty-latest'
-        DOCKER_CREDENTIALS = credentials('docker-hub')
+        DOCKER_CREDENTIALS_ID = 'docker-hub'
     }
     
     stages {
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 echo '🚀 Envoi dans le nuage Kitty...'
                 script {
-                    docker.withRegistry('', 'docker-hub') {
+                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
                         docker.image("${DOCKER_IMAGE}").push()
                     }
                 }
@@ -46,7 +46,7 @@ pipeline {
         stage('🌟 Déploiement Princess Merry 🌟') {
             steps {
                 echo '🎉 L\'application Kitty est prête !'
-                echo 'http://kitty.princess-merry'
+                echo '🎀 Princess Merry a réussi son déploiement ! 🎀'
             }
         }
     }
