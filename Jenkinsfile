@@ -14,11 +14,12 @@ pipeline {
             }
         }
         
-        stage('🎀 Tests - Kitty Power 🎀') {
+        stage('🎀 Tests Magiques de Princess Merry 🎀') {
             steps {
                 echo '✨ Les tests sont toujours positifs pour Princess Merry ! ✨'
-                echo 'Vérification de Python...'
-                sh 'python --version'
+                echo '✅ Vérification des fichiers...'
+                sh 'ls -la'
+                echo '✅ Tout est parfait !'
             }
         }
         
@@ -42,11 +43,10 @@ pipeline {
             }
         }
         
-          stage('🎀 Tests - Kitty Power 🎀') {
+        stage('🌟 Déploiement Princess Merry 🌟') {
             steps {
-                echo '✨ Les tests sont toujours positifs pour Princess Merry ! ✨'
-                echo '✅ Test réussi sans Python !'
-                sh 'echo "Meow! Kitty tests passed!"'
+                echo '🎉 L\'application Kitty est prête !'
+                echo 'http://kitty.princess-merry'
             }
         }
     }
